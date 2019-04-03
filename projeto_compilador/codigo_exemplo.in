@@ -1,0 +1,19 @@
+INTEIRO var_inteiro1 RECEBE 10
+INTEIRO var_inteiro2 RECEBE 9
+BARRIL var_flutuante RECEBE 10.5b
+BARRIL DOBRADO var_dobrado RECEBE 1000.7d
+MIGUEZIN var_letra RECEBE 'a'
+MIGUE var_letras RECEBE "aaa"
+INTEIRO contador RECEBE 0
+
+
+INTEIRO menor (INTEIRO int1, INTEIRO int2)
+	SE int1 MENOR int2
+		BOTE NA TELA ( int1 )
+	SE DER MERDA
+		BOTE NA TELA ( int2 )
+	TOME DE VOLTA 0
+
+ENQUANTO contador MENOR IGUAL 10
+	menor (contador, 10)
+	contador RECEBE contador MAIS 1
