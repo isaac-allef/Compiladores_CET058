@@ -868,7 +868,7 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 101 "linguagem.l"
-{printf("%d", STRING); contador++;}
+{return STRING;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP

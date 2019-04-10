@@ -97,7 +97,7 @@ VIRGULA ","
 
     */
 
-{STRING}     {printf("%d", STRING); contador++;}
+{STRING}     {return STRING;}
 {CHAR}     {printf("<CHAR, %s>", yytext); contador++;}
 {VALOR_STRING}     {printf("<VALOR_STRING, %s>", yytext); contador++;}
 {VALOR_CHAR}     {printf("<VALOR_CHAR, %s>", yytext); contador++;}
