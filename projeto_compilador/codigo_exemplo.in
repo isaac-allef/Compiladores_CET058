@@ -7,13 +7,15 @@ MIGUE var_letras RECEBE "aaa"
 INTEIRO contador RECEBE 0
 
 
-INTEIRO menor (INTEIRO int1, INTEIRO int2)
-	SE int1 MENOR int2
+INTEIRO menor (INTEIRO int1, INTEIRO int2){
+	SE int1 MENOR int2{
 		BOTE NA TELA ( int1 )
-	SE DER MERDA
+	}SE DER MERDA{
 		BOTE NA TELA ( int2 )
+	}
 	TOME DE VOLTA 0
-
-ENQUANTO contador MENOR IGUAL 10
+}
+ENQUANTO contador MENOR IGUAL 10{
 	menor (contador, 10)
 	contador RECEBE contador MAIS 1
+}
