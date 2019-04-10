@@ -1,4 +1,3 @@
-
 /*
 
 - Para gerar o fonte digite
@@ -85,6 +84,8 @@ VALOR_DOUBLE [0-9]+.[0-9]+d
 VALOR_INT [0-9]+
 ABRE_PARENTESES "("
 FECHA_PARENTESES ")"
+ABRE_CHAVE "{"
+FECHA_CHAVE "}"
 VIRGULA ","
 
 /* FIM DA SEÇÃO DE DEFINIÇÕES */
@@ -97,7 +98,7 @@ VIRGULA ","
 
     */
 
-{STRING}     {return STRING;}
+{STRING}     {printf("<STRING, %s>", yytext); contador++;}
 {CHAR}     {printf("<CHAR, %s>", yytext); contador++;}
 {VALOR_STRING}     {printf("<VALOR_STRING, %s>", yytext); contador++;}
 {VALOR_CHAR}     {printf("<VALOR_CHAR, %s>", yytext); contador++;}
@@ -123,6 +124,8 @@ VIRGULA ","
 {INT}     {printf("<INT, %s>", yytext); contador++;}
 {ABRE_PARENTESES} {printf("<ABRE_PARENTESES, %s>", yytext); contador++;}
 {FECHA_PARENTESES} {printf("<FECHA_PARENTESES, %s>", yytext); contador++;}
+{ABRE_CHAVE} {printf("<ABRE_CHAVE, %s>", yytext); contador++;}
+{FECHA_CHAVE} {printf("<FECHA_CHAVE, %s>", yytext); contador++;}
 {VIRGULA}  {printf("<VIRGULA, %s>", yytext); contador++;}
 <<EOF>>                return 0;
     
