@@ -41,19 +41,29 @@ $ ./a.out
         MENOR_IGUAL = 212,
         MAIOR_IGUAL = 213,
         IGUAL = 214,
-        MAIS = 215,
-        MENOS = 216,
-        RETURN = 216,
-        PRINT = 217,
-        VALOR_STRING = 218, 
-        VALOR_CHAR = 219,
-        identificador = 220,
-        VALOR_FLOAT = 221,
-        VALOR_DOUBLE = 222,
-        VALOR_INT = 223,
-        VIRGULA = 224,
-        ABRE_PARENTESES = 225,
-        FECHA_PARENTESES = 226
+        DIFERENTE = 215,
+        MAIS = 216,
+        MENOS = 217,
+        VEZES = 218,
+        DIVIDIDO = 219,
+        RETURN = 220,
+        PRINT = 221,
+        VALOR_STRING = 222, 
+        VALOR_CHAR = 223,
+        identificador = 224,
+        VALOR_FLOAT = 225,
+        VALOR_DOUBLE = 226,
+        VALOR_INT = 227,
+        VIRGULA = 228,
+        ABRE_PARENTESES = 229,
+        FECHA_PARENTESES = 230,
+        ABRE_CHAVE = 231,
+        FECHA_CHAVE = 232,
+        ABRE_COLCHETE = 233,
+        FECHA_COLCHETE = 23,
+        E = 235,
+        OU = 236,
+        NAO = 237
     };
 %}
 
@@ -73,8 +83,11 @@ MAIOR "MAIOR"
 MENOR_IGUAL "MENOR IGUAL"
 MAIOR_IGUAL "MAIOR IGUAL"
 IGUAL "IGUAL"
+DIFERENTE "DIFERENTE"
 MAIS "MAIS"
 MENOS "MENOS"
+VEZES "VEZES"
+DIVIDIDO "DIVIDIDO"
 RETURN "TOME DE VOLTA"
 PRINT "BOTE NA TELA"
 VALOR_STRING \"(\\.|[^"\\])*\"
@@ -90,6 +103,9 @@ FECHA_CHAVE "}"
 VIRGULA ","
 ABRE_COLCHETE "["
 FECHA_COLCHETE "]"
+E "E"
+OU "OU"
+NAO "NAO"
 
 /* FIM DA SEÇÃO DE DEFINIÇÕES */
 
@@ -115,8 +131,11 @@ FECHA_COLCHETE "]"
 {MENOR_IGUAL} {printf("<MENOR_IGUAL, %s>", yytext); contador++;}
 {MAIOR_IGUAL} {printf("<MAIOR_IGUAL, %s>", yytext); contador++;}
 {IGUAL} {printf("<IGUAL, %s>", yytext); contador++;}
+{DIFERENTE} {printf("<DIFERENTE, %s>", yytext); contador++;}
 {MAIS} {printf("<MAIS, %s>", yytext); contador++;}
 {MENOS} {printf("<MENOS, %s>", yytext); contador++;}
+{VEZES} {printf("<VEZES, %s>", yytext); contador++;}
+{DIVIDIDO} {printf("<DIVIDIDO, %s>", yytext); contador++;}
 {RETURN} {printf("<RETURN, %s>", yytext); contador++;}
 {PRINT} {printf("<PRINT, %s>", yytext); contador++;}
 {identificador}     {printf("<identificador, %s>", yytext); contador++;}
@@ -133,6 +152,9 @@ FECHA_COLCHETE "]"
 {VIRGULA}  {printf("<VIRGULA, %s>", yytext); contador++;}
 {ABRE_COLCHETE}  {printf("<ABRE_COLCHETE, %s>", yytext); contador++;}
 {FECHA_COLCHETE}  {printf("<FECHA_COLCHETE, %s>", yytext); contador++;}
+{E}  {printf("<E, %s>", yytext); contador++;}
+{OU}  {printf("<OU, %s>", yytext); contador++;}
+{NAO}  {printf("<NAO, %s>", yytext); contador++;}
 <<EOF>>                return 0;
     
 %%
